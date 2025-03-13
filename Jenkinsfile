@@ -30,12 +30,13 @@ pipeline {
         stage('Deploy') {
     steps {
         script {
-            echo 'Starting Deployment...'
             sh '''
+            eval `ssh-agent -s`
+            ssh-add ~/.ssh/id_rsa
             cd repo
-            git push https://shivadarshan-devadiga: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@github.com/shivadarshan-devadiga/PES1UG22CS560_Jenkins main
+            git remote set-url origin git@github.com:shivadarshan-devadiga/PES1UG22CS560_Jenkins.git
+            git push origin main
             '''
-            echo 'Deployment Successful!'
         }
     }
 }
