@@ -28,10 +28,18 @@ pipeline {
             }
         }
         stage('Deploy') {
-            steps {
-                echo 'Deployment Successful'
-            }
+    steps {
+        script {
+            echo 'Starting Deployment...'
+            sh '''
+            cd repo
+            git push https://shivadarshan-devadiga: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@github.com/shivadarshan-devadiga/PES1UG22CS560_Jenkins main
+            '''
+            echo 'Deployment Successful!'
         }
+    }
+}
+
     }
     post {
         failure {
