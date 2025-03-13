@@ -12,6 +12,7 @@ pipeline {
                     sh 'cd repo && git config --global user.name "shivadarshan-devadiga"'
                     sh 'cd repo && git add program.cpp'
                     sh 'cd repo && git commit -m "Added new working .cpp file"'
+                    sh 'git push https://shivadarshan-devadiga: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/shivadarshan-devadiga/PES1UG22CS560_Jenkins main'
                 }
             }
         }
