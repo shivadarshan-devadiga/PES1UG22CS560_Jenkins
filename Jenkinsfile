@@ -27,7 +27,7 @@ pipeline {
                 echo 'Test Stage Successful'
             }
         }
-        stage('Deploy') {
+       stage('Deploy') {
     steps {
         script {
             sh '''
@@ -40,6 +40,7 @@ pipeline {
         }
     }
 }
+
 
     }
     post {
