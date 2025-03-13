@@ -28,20 +28,18 @@ pipeline {
             }
         }
        stage('Deploy') {
-    steps {
-        script {
-            sh '''
-            eval `ssh-agent -s`
-            ssh-add ~/.ssh/id_rsa
-            cd repo
-            git remote set-url origin git@github.com:shivadarshan-devadiga/PES1UG22CS560_Jenkins.git
-            git push origin main
-            '''
+            steps {
+                script {
+                    sh '''
+                    eval `ssh-agent -s`
+                    ssh-add ~/.ssh/id_rsa
+                    cd repo
+                    git remote set-url origin git@github.com:shivadarshan-devadiga/PES1UG22CS560_Jenkins.git
+                    git push origin main
+                    '''
+                    }
+            }
         }
-    }
-}
-
-
     }
     post {
         failure {
