@@ -11,7 +11,8 @@ pipeline {
                     sh 'cd repo && git config --global user.email "shivadarshan2212@gmail.com"'
                     sh 'cd repo && git config --global user.name "shivadarshan-devadiga"'
                     sh 'cd repo && git add program.cpp'
-                    sh 'cd repo && git commit -m "Added new working .cpp file"'
+                    sh 'cd repo && git commit -m "Added new working .cpp file" || echo "No changes to commit, skipping commit"'
+                    sh 'cd repo && git push origin main || echo "No changes to push, skipping push"'
                     }
             }
         }
